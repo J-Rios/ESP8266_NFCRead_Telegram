@@ -76,7 +76,7 @@ void telegram_begin() // Necesario para determinar el chat id del bot
         // El tiempo para consultar si hay mensajes nuevos ha transcurrido
         if (millis() > Bot_lasttime + Bot_mtbs)
         {
-            int numNewMessages = bot.getUpdates(bot.last_message_recived + 1);
+            int numNewMessages = bot.getUpdates(bot.last_message_received + 1);
             if(numNewMessages)
             {
                 start = true;
@@ -97,7 +97,7 @@ String telegram_read()
 {
     String msg = "";
 
-    if(bot.getUpdates(bot.last_message_recived + 1))
+    if(bot.getUpdates(bot.last_message_received + 1))
         msg = bot.messages[0].text;
 
     return msg;
